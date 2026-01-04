@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>To-do list</title>
+</head>
+
+<body>
+  <main class="container">
+    <div class="todo-app">
+        <h1>To-Do App</h1>
+        
+        <!-- Отображение текущей даты -->
+        <div class="date-info">
+          <p id="current-date"></p>
+        </div>
+        
+        <!-- Сортировка и настройки -->
+        <div class="controls-row">
+          <select id="sort-select">
+            <option value="created-desc">Newest first</option>
+            <option value="created-asc">Oldest first</option>
+            <option value="deadline-asc">Deadline (earliest)</option>
+            <option value="deadline-desc">Deadline (latest)</option>
+            <option value="alphabetical-asc">A to Z</option>
+            <option value="alphabetical-desc">Z to A</option>
+            <option value="status">Status (pending first)</option>
+          </select>
+          
+          <button id="trash-btn" class="icon-btn" title="Trash bin (last 24h)">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+          
+          <button id="settings-btn" class="icon-btn" title="Settings">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+        </div>
+        
+        <!-- Форма добавления задач -->
+        <form class="input-area" id="task-form">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <input type="date" id="task-deadline" placeholder="Deadline">
+            <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i></button>
+            <button type="button" id="add-advanced-btn" title="Advanced editor"><i class="fa-solid fa-pen"></i></button>
+        </form>
+        
+        <!-- Контейнер для списка задач -->
+        <div class="todos-container">
+            <ul id="task-list"></ul>
+            <img class="empty-image" src="./images/empty.png" alt="empty" width="150">
+        </div>
+        
+        <!-- Статистика -->
+        <div class="stats">
+          <p>Total: <span id="total-count">0</span></p>
+          <p>Completed: <span id="completed-count">0</span></p>
+          <p>Pending: <span id="pending-count">0</span></p>
+        </div>
+    </div>
+  </main>
+</body>
+<script src="script.js"></script>
+
+</html>
